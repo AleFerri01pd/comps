@@ -2,17 +2,21 @@ import Button from "./layouts/Button";
 import { VscBracketError, VscCheck, VscBell, VscSmiley } from 'react-icons/vsc'
 
 function App() {
+
+	const handleClick = () => console.log('click')
+	const handleMouseEnter = () => console.log('mouse entre')
+
 	return (
 	<div>
 		<div>
-			<Button primary outline rounded>
+			<Button primary outline rounded onClick={handleClick} className="mb-5">
 				<VscSmiley />
 				Primary Button
 			</Button>
 		</div>
 		<div>
-			<Button warning rounded>
-				<VscBell className="mr-1 fon" />
+			<Button warning rounded onMouseEnter={handleMouseEnter}>
+				<VscBell />
 				Warning Button
 			</Button>
 		</div>

@@ -9,10 +9,11 @@ function Button({
     warning,
     danger,
     outline,
-    rounded
+    rounded,
+    ...rest //👉🏻 prende tutti i restanti elementi dell'oggetto props
 }) {
     const classes = twMerge(
-        classNames('flex items-center px-3 py-1.5 border ease-in duration-300 text-white', {
+        classNames(rest.className, 'flex items-center px-3 py-1.5 border ease-in duration-300 text-white', {
             'border-blue-500 bg-blue-500 hover:bg-blue-800 hover:border-blue-800': primary,
             'border-sky-500 bg-sky-500 hover:bg-sky-800 hover:border-sky-800': secondary,
             'border-green-500 bg-green-500 hover:bg-green-800 hover:border-green-800': success,
@@ -28,7 +29,7 @@ function Button({
         })
     );
 
-    return <button className={classes}>{children}</button> //👉🏻 underlyng element (JSX under a component)
+    return <button {...rest} className={classes}>{children}</button> //👉🏻 underlyng element (JSX under a component)
 }
 
 Button.propTypes = {
