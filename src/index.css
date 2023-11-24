@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+button > svg {
+    margin-right: 10px;
+}
+
+button {
+    margin: 15px;
+    min-width: 200px;
+    justify-content: center;
+}
